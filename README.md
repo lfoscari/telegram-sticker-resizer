@@ -5,3 +5,22 @@ The default values are `512x512` for the size and `./thumb` as the destination d
 ### Example
 I'm converting two images, the first one is a 474x474 square jpg, the second one is 960x540 rectangle png. The result in both case is a 512x512 png, the originals can be found in the `example` folder.
 ![Example](example/zerotwo.png)
+
+### Requirements
+Convert by ImageMagick, instructions on how to install [here](https://www.imagemagick.org/script/download.php).
+
+### Install
+```bash
+# Clone the repository
+git clone git@github.com:lfoscari/telegram-sticker-resizer.git
+
+# Navigate to the directory
+cd telegram-sticker-resizer
+
+# Execute the script
+./thumb ...
+```
+If you don't want the full repository in anywhere simply move the `thumb` executable anywhere in your `$PATH`.
+```bash
+thumb ...
+```
