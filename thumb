@@ -2,7 +2,7 @@
 
 set -e
 
-OUTPUT=./thumb
+OUTPUT=thumbnails
 SIZE=512x512
 
 function usage {
@@ -23,18 +23,25 @@ do
 done
 
 # Create destination directory
-[[ ! -d "$OUTPUT" ]] && mkdir "$OUTPUT"
+mkdir -p "$OUTPUT"
 
 # Shift args to start reading files
 shift $(($OPTIND - 1))
+
+declare -a MISSING_FILES
 
 # Convert files
 for p in "$@"; do
     if [[ -f "$p" ]]; then
         echo Reducing "$p" to "$SIZE"
-        convert "$p" -resize "$SIZE" -background "rgba(0, 0, 0, 0)" -gravity center -extent "$SIZE" "$OUTPUT/${p%.*}.png"
+        convert "$p" -resize "$SIZE" -background "rgba(0, 0, 0, 0)" -gravity center -extent "$SIZE" "$OUTPUT/$(basename ${p%.*}).png"
     else
-        echo Image "$p" not found
-        exit -1
+        # echo Image "$p" not found
+        MISSING_FILES+=($p)
     fi
 done
+
+if [[ ${#MISSING_FILES[@]} -ne 0 ]]; then
+    echo "The following files couldn't not be found:"
+    for e in ${MISSING_FILES[@]}; do echo "\t$e"; done
+fi
