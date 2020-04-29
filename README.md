@@ -5,7 +5,7 @@ The default values are `512x512` for the size and `thumbnails` as the destinatio
 If the image doesn't have the right rateo for the size, it's embedded in a bigger square with a transparent background.
 
 ### Example
-I'm converting two images, the first one is a 474x474 square jpg, the second one is 960x540 rectangle png. The result in both case is a 512x512 png, the originals can be found in the `example` folder.
+I'm converting two images, the first one is a 474x474 square jpg, the second one is 960x540 rectangle png. The originals can be found in the `example` folder.
 ![Example](example/zerotwo.png)
 
 ### Requirements

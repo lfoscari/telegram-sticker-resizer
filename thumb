@@ -34,7 +34,7 @@ declare -a MISSING_FILES
 for p in "$@"; do
     if [[ -f "$p" ]]; then
         echo Reducing "$p" to "$SIZE"
-        convert "$p" -resize "$SIZE" -background "rgba(0, 0, 0, 0)" -gravity center -extent "$SIZE" "$OUTPUT/$(basename ${p%.*}).png"
+        convert "$p" -resize "$SIZE" -background "rgba(0, 0, 0, 0)" -gravity center "$OUTPUT/$(basename ${p%.*}).png"
     else
         # echo Image "$p" not found
         MISSING_FILES+=($p)
