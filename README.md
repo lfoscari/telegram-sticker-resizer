@@ -23,4 +23,4 @@ $ cd telegram-sticker-resizer
 $ ./thumb
 usage: thumb [-d destination] [-s size] images...
 ```
-If you don't want the full repository in anywhere simply move the `thumb` executable anywhere in your `$PATH`.
+If you don't want the full repository simply move the `thumb` executable anywhere in your `$PATH`.
