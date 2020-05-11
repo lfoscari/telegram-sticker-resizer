@@ -2,8 +2,6 @@
 
 set -e
 
-# cd "$(dirname "$0")"
-
 OUTPUT=.
 SIZE=512x512
 
