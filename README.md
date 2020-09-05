@@ -24,3 +24,9 @@ $ ./thumb
 usage: thumb [-d destination] [-s size] images...
 ```
 If you don't want the full repository simply move the `thumb` executable anywhere in your `$PATH`.
+
+### Notes
+This script can be run on Windows Subsystem for Linux, you may need to invoke `bash` explicitly for it to function:
+```
+bash thumb [-d destination] [-s size] images...
+```
